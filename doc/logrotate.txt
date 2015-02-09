@@ -1,0 +1,16 @@
+/var/maidmail/log/development.log
+/var/maidmail/log/production.log
+/var/maidmail/log/test.log
+{
+    daily
+    missingok
+    rotate 1000
+    notifempty
+    copytruncate
+    create 0666 lighttpd maidmail
+    sharedscripts
+    postrotate
+        /bin/kill -HUP `cat /var/run/lighttpd.pid 2>/dev/null` 2> /dev/null || true
+    endscript
+    dateext
+}

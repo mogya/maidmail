@@ -1,0 +1,17 @@
+<% @login_form_renderd=true -%>
+<% form_tag({:controller=>'login',:action=>"login"},{:id=>"login"}) do -%>
+<table id="login_form_table" class="form_table">
+	<tr>
+		<th><label for="login_mail">メールアドレス</label></th>
+		<td><%= text_field_tag(:mail,nil,:id=>"login_mail") %></td>
+	</tr>
+	<tr>
+		<th><label for="login_password">パスワード</label></th>
+		<td><%= password_field_tag(:password,nil,:id=>"login_password") %></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td><%= submit_tag("ログイン") %></td>
+	</tr>
+</table>
+<% end -%>

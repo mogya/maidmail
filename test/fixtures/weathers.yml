@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  city_id: 1
+  rss_date: 2008-09-15 11:06:02
+  weather: MyText
+  high_temperature: 1
+  low_temperature: 1
+  created_at: 2008-09-15 11:06:02
+  updated_at: 2008-09-15 11:06:02
+
+two:
+  city_id: 1
+  rss_date: 2008-09-15 11:06:02
+  weather: MyText
+  high_temperature: 1
+  low_temperature: 1
+  created_at: 2008-09-15 11:06:02
+  updated_at: 2008-09-15 11:06:02

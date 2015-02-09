@@ -1,0 +1,22 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_withdraw.png",{:size=>"172x50",:class=>"title",:alt=>"登録削除"}) %>
+<p class="main-text">
+　メイドめーるのユーザー登録情報を削除します。ご主人様のこと、すっかり忘れちゃいますけど、本当にいいですか？
+</p>
+<% form_tag(:action=>"withdraw") do -%>
+<table id="user_form_table" class="form_table">
+	<tr>
+		<th></th>
+		<td><%= submit_tag("削除",:disable_with=>"送信中..") %></td>
+	</tr>
+</table>
+<% end -%>

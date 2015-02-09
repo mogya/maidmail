@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+/* ------------- デフォルトの設定 ------------- */
+#container{	
+	background-color: #F7EFEF; 
+	background-repeat: no-repeat;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* メイドさん */
+.img2093_1{
+	background-image: url(/images/img2093_1.png);
+	background-position: 560px 90px;
+}
+.img2094_2{
+	background-image: url(/images/img2094_2.png);
+	background-position: 620px 90px;
+}
+.img2134_1{
+	background-image: url(/images/img2134_1.png);
+	background-position: 620px 90px;
+}
+.img2135_2{
+	background-image: url(/images/img2135_2.png);
+	background-position: 620px 90px;
+}
+.img2136_3{
+	background-image: url(/images/img2136_3.png);
+	background-position: 620px 90px;
+}
+.img2137_4{
+	background-image: url(/images/img2137_4.png);
+	background-position: 620px 90px;
+}
+.img2138_5{
+	background-image: url(/images/img2138_5.png);
+	background-position: 620px 90px;
+}
+.img2139_6{
+	background-image: url(/images/img2139_6.png);
+	background-position: 620px 90px;
+}
+.img2140_7{
+	background-image: url(/images/img2140_7.png);
+	background-position: 620px 90px;
+}
+.img2141_016{
+	background-image: url(/images/img2141_016.png);
+	background-position: 640px 90px;
+}
+
+.img_hituji{
+	background-image: url(/images/hitujisituji4.png);
+	background-position: 620px 90px;
+}
+
+h1,h2 {
+	clear: all;
+}
+
+/* ------------- ヘッダ ------------- */
+#header {
+	margin-bottom:10px;
+}
+
+#header #title {
+	float: left;
+	margin: 10px 0 0 10px;
+}
+
+#header #login_area {
+	float: right;
+	margin: 10px 10px 0 0;
+}
+#login input{
+	display:block;
+}
+
+#eyecatch {
+	clear: both;
+}
+
+#talk {
+	margin: 0 0 0 50px;
+}
+
+/* ------------- メイン ------------- */
+#main {
+	position: relative;
+	width:560px;
+	padding: 25px 10px 15px 50px;
+}
+
+#space {
+	height:300px;
+}
+.message{
+	border: solid 1px black;
+	padding: 10px;
+	margin: 0 0 10px 0;
+}
+
+.form_table{
+}
+.form_table th{
+	text-align:right;
+	font-weight:bold;
+}
+
+#main .form {
+	margin: 0 0 10px 0;
+}
+
+#main .title {
+	margin: 10px 0 10px -10px;
+	font-size:120%;
+}
+
+.visible_table{
+	border:1px solid #000000;
+	border-collapse:collapse;
+	border-spacing:0;
+	empty-cells:show;
+}
+.visible_table tr{
+	border:1px solid #000000;
+}
+.visible_table td{
+	border:1px solid #000000;
+}
+
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+
+.main_text{
+
+}
+
+.caption{
+	margin: 5px 0 0 0;
+}
+
+.small_text{
+	text-align: right;
+	font-size: 80%;
+}
+
+#try_input,
+#try_output{
+	width: 99%;
+	height: 200px;
+	display: block;
+}
+
+#action_list{
+	margin: 20px 0 120px 0;
+}
+
+#action_list li{
+	display: inline;
+}
+
+#action_list li{
+}
+#action_list li.first{
+	margin: 0 0 0 0;
+}
+
+.content{
+	width: 500px;
+}
+
+.content ul li{
+	list-style: circle inside;
+}
+
+/* ------------- フッタ ------------- */
+.copyright {
+	color: gray;
+}
+
+.horizontal_menu li{
+	display: inline;
+	border-left :1px solid #000000;
+	padding: 0 5px 0 10px;
+}
+.horizontal_menu li.first{
+	border-left :none;
+	padding: 0 5px 0 10px;
+}
+
+#copyright{
+	float:right;
+}
+#footer_menu{
+	float:left;
+}
+
+
+/* ------------- clearfix hack. ------------- */
+.clearfix:after {
+	clear:both;
+	content:".";
+	display:block;
+	height:0pt;
+	visibility:hidden;
+}
+.clearfix {
+}
+	* html .clearfix {
+	height:1%;
+}
+.clearfix {
+	display:block;
+}

@@ -1,0 +1,36 @@
+<h1>Listing cities</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Area1</th>
+    <th>Area2</th>
+    <th>Rss uri</th>
+    <th>Rss type</th>
+    <th>Pos latitude</th>
+    <th>Pos longitude</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% for city in @cities %>
+  <tr class="<%= cycle('list-line-odd','list-line-even')%>">
+    <td><%=h city.name %></td>
+    <td><%=h city.area1 %></td>
+    <td><%=h city.area2 %></td>
+    <td><%=h city.rss_uri %></td>
+    <td><%=h city.rss_type %></td>
+    <td><%=h city.pos_latitude %></td>
+    <td><%=h city.pos_longitude %></td>
+    <td><%= city.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+    <td><%= city.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+    <td><%= link_to 'Show', city %></td>
+    <td><%= link_to 'Edit', edit_city_path(city) %></td>
+    <td><%= link_to 'Destroy', city, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New city', new_city_path %>

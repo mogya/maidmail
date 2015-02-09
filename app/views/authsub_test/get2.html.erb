@@ -1,0 +1,25 @@
+<h1>AuthsubTest#get2</h1>
+
+<p id="notice"><%= flash[:notice] %></p>
+<p id="error"><%= flash[:error] %></p>
+
+<%= @events.size %> events found.<br />
+<hr/>
+<% if (@events.size>0) %>
+	<%= "#{@events[0].st.strftime('%Y/%m/%d')}の予定" %>
+	<%
+	eventlist_str = '<ul>'
+	@events.each{|event|
+		if (event.allday)
+			eventlist_str << %Q[<li>#{event.title}</li>]
+		else
+			eventlist_str << %Q[<li>#{event.st.strftime('%H:%M:%S')}-#{event.en.strftime('%H:%M:%S')}:#{event.title}</li>]
+		end
+	}
+	eventlist_str << '</ul>'
+	%>
+	<%=eventlist_str%>
+<% end %>
+<hr/>
+
+<p><%= link_to 'もう一度最初から', :action=>'hello' %></p>

@@ -1,0 +1,32 @@
+<%
+	eventlist_str = ""
+	@events.each{|event|
+		if (event.allday)
+			eventlist_str << %Q[#{event.title}]
+		elsif ((event.st)&&(event.en))
+			eventlist_str << %Q[#{event.st.strftime('%H:%M')}から#{event.en.strftime('%H:%M')}まで、#{event.title}]
+		elsif (event.st)
+			eventlist_str << %Q[#{event.st.strftime('%H:%M')}から、#{event.title}]
+		elsif (event.en)
+			eventlist_str << %Q[#{event.en.strftime('%H:%M')}まで、#{event.title}]
+		else
+			eventlist_str << %Q[#{event.title}]
+		end
+		eventlist_str << "\n"
+	}
+%>
+おっはようございます。ごしゅじんさま～っ！あさですよ～？
+
+<% if ""==eventlist_str -%>
+今日は、予定がないのですね。おやすみですか？
+<% else -%>
+本日の予定は、
+<%= eventlist_str %>
+となっております。
+<% end -%>
+
+<% if (@weather and /雨/=~@weather.weather) -%>
+あ、ところで今日の<%=@weather.city.name%>の天気は<%= @weather.weather %>だそうでございます。外出の際は、傘をお忘れなくお持ちください。
+<% end -%>
+それでは、気をつけて行ってらっしゃいませ。
+<%= MAIL_FOOTER %>

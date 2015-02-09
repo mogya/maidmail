@@ -1,0 +1,39 @@
+<% content_for :html_header do -%>
+	<title>試してみる - メイドめーる</title>
+<% end -%>
+
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%= image_tag("title_try.png",{:size=>"221x50",:class=>"title",:alt=>"ためしてみる"}) %>
+
+<div class="content">
+<% form_tag({:controller=>'top',:action=>"try"},{:id=>"try"}) do -%>
+<fieldset>
+<legend>
+どのくらいちゃんとメールを読んでくれるの? 試しに入力してみてください。
+</legend>
+<%= text_area_tag("try_input",params[:try_input]||"ここにメールの内容を貼り付けてください" ) %>
+<%= submit_tag("読み取り") %>
+<%= text_area_tag("try_output",params[:try_output]||"ここに解析結果が表示されます。" ) %>
+</fieldset>
+<% end -%>
+<% if (params[:try_output]) %>
+<p class="main_text">Googleカレンダーを登録すると、このような解析結果がカレンダーに登録できるようになります。</p>
+<% else %>
+<p id="try_policy">
+入力されたメールの内容については、このデモ以外で使用しません。<br />
+<%= link_to("プライバシーポリシー", {:controller=>'top',:action=>"rule"}, {:popup=>true}) %>
+</p>
+<% end %>
+</div>
+
+<ul id="action_list">
+	<li class="first">
+	<%= link_to(
+		image_tag("circle_regist.png",{:size=>"273x100",:alt=>"登録する！"}),
+		{:controller=>'login',:action=>"regist"} 
+	 ) %>
+	</li>
+</ul>
+

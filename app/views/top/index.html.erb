@@ -1,0 +1,31 @@
+<% content_for :html_header do -%>
+	<title>メイドめーる</title>
+<% end -%>
+
+<% content_for :eyecatch do -%>
+	<img id="talk" src="images/talk11.png" width="250" height="50" alt="ごしゅじんさまのご予定は、私が管理いたします！" />
+<% end -%>
+
+<% content_for :main do -%>
+<div class="content">
+	<p class="main-text">
+		メイドめーるは、Googleカレンダーの予定を毎朝、携帯電話にメールしてくれるサービスです。<br />
+		メールに返信することで、新しい予定を登録することも出来ます。<br />
+	</p>
+</div>
+
+<ul id="action_list">
+	<li class="first">
+		<%= link_to( 
+			image_tag("button_detail.gif",{:size=>"152x57",:alt=>"詳しく見る！"}),
+			{:action=>'more'} 
+			) %>
+	</li>
+	<li class="last">
+		<%= link_to(
+			image_tag("button_regist.gif",{:size=>"152x57",:alt=>"登録する！"}),
+			{:controller=>'login',:action=>"regist"} 
+		 ) %>
+	</li>
+</ul>
+<% end -%>

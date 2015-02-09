@@ -1,0 +1,36 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Mail</th>
+    <th>MailTo</th>
+    <th>morningMailTime</th>
+    <th>Notifybefore</th>
+    <th>calendarFeedUri</th>
+    <th>calendarToken</th>
+    <th>Ext1</th>
+    <th>Ext2</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%=h user.id %></td>
+    <td><%=h user.mail %></td>
+    <td><%=h user.mailto %></td>
+    <td><%=h user.morningMailTime %></td>
+    <td><%=h user.notifybefore %></td>
+    <td><%=h user.calendarFeedUri %></td>
+    <td><%=h user.calendarToken %></td>
+    <td><%=h user.ext1 %></td>
+    <td><%=h user.ext2 %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

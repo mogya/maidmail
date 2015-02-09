@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  area1: MyString
+  area2: MyString
+  rss_uri: MyString
+  rss_type: MyString
+  pos_latitude: 1
+  pos_longitude: 1
+
+two:
+  name: MyString
+  area1: MyString
+  area2: MyString
+  rss_uri: MyString
+  rss_type: MyString
+  pos_latitude: 1
+  pos_longitude: 1

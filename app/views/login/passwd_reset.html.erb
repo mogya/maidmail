@@ -1,0 +1,31 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_regist.png",{:size=>"180x50",:class=>"title",:alt=>"設定"}) %>
+
+<% form_tag(:action=>"passwd_reset") do -%>
+	<table id="password_form_table" class="form_table">
+	<tr>
+		<th><label for="user_password">パスワード</label></th>
+		<td><%= password_field_tag(:password,nil) %></td>
+	</tr>
+	<tr>
+		<th><label for="user_password">パスワード(確認)</label></th>
+		<td><%= password_field_tag(:password_confirm,nil) %></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td><%= submit_tag("決定",:disable_with=>"送信中..") %></td>
+	</tr>
+</table>
+<% end -%>
+
+<p class="main-text">
+</p>

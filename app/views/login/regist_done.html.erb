@@ -1,0 +1,25 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_regist.png",{:size=>"180x50",:class=>"title",:alt=>"設定"}) %>
+<%= image_tag("icon_progress_black.png",{:size=>"41x53",:class=>"title",:alt=>""}) %>
+<%= image_tag("icon_progress_black.png",{:size=>"41x53",:class=>"title",:alt=>""}) %>
+<%= image_tag("icon_progress_black.png",{:size=>"41x53",:class=>"title",:alt=>""}) %>
+
+<p class="main-text">
+<%= @user.mail %>あてにメールを送信しました。ご確認ください。メールが届いていれば、これで準備完了です。明日からメールを送信しますので、楽しみに待っていてくださいね。
+</p>
+<p class="main-text">
+メールが届かない人は→<%= link_to("こちら",{:controller=>"top",:action=>"mailhelp"}) %>
+</p>
+<p class="main-text">
+設定を変更したい人は→<%= link_to("設定変更",{:controller=>"login",:action=>"config"}) %>
+</p>
+

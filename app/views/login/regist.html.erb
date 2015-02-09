@@ -1,0 +1,56 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_regist.png",{:size=>"180x50",:class=>"title",:alt=>"設定"}) %>
+
+<% form_for(@user, :url=>{:action=>"regist"},:html=>{:class=>"form"}) do |f| -%>
+<table id="regist_form_table" class="form_table">
+	<tr>
+		<th><label for="user_mail">メールアドレス</label></th>
+		<td><%= f.text_field(:mail,{:id=>"user_mail"}) %></td>
+	</tr>
+	<tr>
+		<th><label for="user_morning">朝メールする時間</label></th>
+		<td><%= f.select(:morningMailTime,timelist(),{:id=>"user_morning"}) %></td>
+	</tr>
+	<tr>
+		<th><label for="user_city">天気予報の都市</label></th>
+		<td>
+			<%= select_tag(
+			       "user[city_id]",
+			       option_groups_of_cities(),
+			       {:id=>"user_city"}
+			    )
+			%>
+			<span class="form_table_message">(天気予報に使用します。)</span>
+		</td>
+	</tr>
+	<tr>
+		<th><label for="user_password">パスワード</label></th>
+		<td><%= password_field_tag("user[raw_password]",nil, {:id=>"user_password"}) %></td>
+	</tr>
+	<tr>
+		<th><label for="user_password">パスワード</label></th>
+		<td><%= password_field_tag("user[raw_password_confirm]",nil, {:id=>"user_password_confirm"}) %></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<%= check_box("agree_rule","yes",:id=>"user_agree_rule") %>
+			<label for="user_agree_rule"><%= link_to("利用規約",{controller="top",action="rule"},{:popup=>true}) %>に同意する</label>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td><%= submit_tag("進む",:disable_with=>"送信中..") %></td>
+	</tr>
+</table>
+<% end -%>
+

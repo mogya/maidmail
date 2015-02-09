@@ -1,0 +1,58 @@
+<h1>Editing user</h1>
+
+<%= error_messages_for :user %>
+
+<% form_for(@user) do |f| %>
+  <p>
+    <b>Mail</b><br />
+    <%= f.text_field :mail %>
+  </p>
+
+  <p>
+    <b>MailTo</b><br />
+    <%= f.text_field :mailto %>
+  </p>
+
+  <p>
+    <b>morningMailTime</b><br />
+    <%= f.text_field :morningMailTime %>
+  </p>
+
+  <p>
+    <b>Notifybefore</b><br />
+    <%= f.text_field :notifybefore %>
+  </p>
+
+  <p>
+    <b>calendarFeedUri</b><br />
+    <%= f.text_field :calendarFeedUri %>
+  </p>
+
+  <p>
+    <b>calendarToken</b><br />
+    <%= f.text_field :calendarToken %>
+  </p>
+
+  <p>
+    <b>city_id</b><br />
+    <%= f.text_field :city_id %>
+  </p>
+
+
+  <p>
+    <b>Ext1</b><br />
+    <%= f.text_field :ext1 %>
+  </p>
+
+  <p>
+    <b>Ext2</b><br />
+    <%= f.text_field :ext2 %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

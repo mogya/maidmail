@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @city.name %>
+</p>
+
+<p>
+  <b>Area1:</b>
+  <%=h @city.area1 %>
+</p>
+
+<p>
+  <b>Area2:</b>
+  <%=h @city.area2 %>
+</p>
+
+<p>
+  <b>Rss uri:</b>
+  <%=h @city.rss_uri %>
+</p>
+
+<p>
+  <b>Rss type:</b>
+  <%=h @city.rss_type %>
+</p>
+
+<p>
+  <b>Pos latitude:</b>
+  <%=h @city.pos_latitude %>
+</p>
+
+<p>
+  <b>Pos longitude:</b>
+  <%=h @city.pos_longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

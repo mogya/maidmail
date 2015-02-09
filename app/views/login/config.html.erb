@@ -1,0 +1,74 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_config.png",{:size=>"100x50",:class=>"title",:alt=>"設定"}) %>
+
+<% form_for(@user, :url=>{:action=>"update"},:html=>{:class=>"form"}) do |f| -%>
+<table id="user_form_table" class="form_table">
+	<tr>
+		<th><label for="user_mail">メールアドレス</label></th>
+		<td><%= f.text_field(:mail,{:id=>"user_mail"}) %></td>
+	</tr>
+	<tr>
+		<th><label for="user_morning">朝メールする時間</label></th>
+		<td><%= f.select(:morningMailTime,timelist(),{:id=>"user_morning"}) %></td>
+	</tr>
+	<tr>
+		<th><label for="user_city">天気予報の都市</label></th>
+		<td>
+			<%= select_tag(
+			       "user[city_id]",
+			       option_groups_of_cities(),
+			       {:id=>"user_city"}
+			    )
+			%>
+			<span class="form_table_message">(天気予報に使用します。)</span>
+		</td>
+	</tr>
+	<tr>
+		<th><label for="user_password">パスワード</label></th>
+		<td><%= password_field_tag("user[raw_password]",nil, {:id=>"user_password"}) %>(変更したい時だけ入力してください)</td>
+	</tr>
+	<tr>
+		<th><label for="user_password">パスワード</label></th>
+		<td><%= password_field_tag("user[raw_password_confirm]",nil, {:id=>"user_password_confirm"}) %>(もう一度入力してください)</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td><%= submit_tag("更新",:disable_with=>"送信中..") %></td>
+	</tr>
+</table>
+<% end -%>
+
+そのほかの作業
+
+<% form_tag(:action=>"google_auth") do -%>
+<table id="update_google_auth_table" class="form_table">
+	<tr><td><%= submit_tag("Googleカレンダーの認証を更新",:disable_with=>"送信中..") %></td></tr>
+</table>
+<% end -%>
+
+<% form_tag(:action=>"send_welcome_mail") do -%>
+<table id="send_welcome_mail_table" class="form_table">
+	<tr><td><%= submit_tag("使い方メールをもう一度送る",:disable_with=>"送信中..") %></td></tr>
+</table>
+<% end -%>
+
+<% form_tag(:action=>"regenerate_mailto_address") do -%>
+<table id="regenerate_mailto_address_table" class="form_table">
+	<tr><td><%= submit_tag("スケジュール登録用のアドレスを変更する",:disable_with=>"送信中..") %></td></tr>
+</table>
+<% end -%>
+
+<% form_tag(:action=>"withdrawal_confirm") do -%>
+<table id="withdrawal_confirm_table" class="form_table">
+	<tr><td><%= submit_tag("ユーザー登録情報を削除(退会)する",:disable_with=>"送信中..") %></td></tr>
+</table>
+<% end -%>

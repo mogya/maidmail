@@ -1,0 +1,48 @@
+<p>
+  <b>id:</b>
+  <%=h @user.id %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%=h @user.mail %>
+</p>
+
+<p>
+  <b>mailto:</b>
+  <%=h @user.mailto %>
+</p>
+
+<p>
+  <b>MorningMailTime:</b>
+  <%=h @user.morningMailTime %>
+</p>
+
+<p>
+  <b>Notifybefore:</b>
+  <%=h @user.notifybefore %>
+</p>
+
+<p>
+  <b>calendarFeedUri:</b>
+  <%=h @user.calendarFeedUri %>
+</p>
+
+<p>
+  <b>calendarToken:</b>
+  <%=h @user.calendarToken %>
+</p>
+
+<p>
+  <b>Ext1:</b>
+  <%=h @user.ext1 %>
+</p>
+
+<p>
+  <b>Ext2:</b>
+  <%=h @user.ext2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

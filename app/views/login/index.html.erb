@@ -1,0 +1,10 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] -%>
+	<p class="message"><%=h flash[:notice] %></p>
+<% end -%>
+
+<%= render :file=>"login/_login_form" %>
+
+<%= link_to("パスワード忘れちゃった",:action=>'remind') %>

@@ -1,0 +1,27 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_regist.png",{:size=>"180x50",:class=>"title",:alt=>"設定"}) %>
+
+<% form_tag(:action=>"remind") do -%>
+	<table id="remind_form_table" class="form_table">
+	<tr>
+		<th><label for="mail">あなたのメールアドレス</label></th>
+		<td><%= text_field_tag(:mail,nil) %></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td><%= submit_tag("送信",:disable_with=>"送信中..") %></td>
+	</tr>
+</table>
+<% end -%>
+
+<p class="main-text">
+</p>

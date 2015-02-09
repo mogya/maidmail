@@ -1,0 +1,32 @@
+<h1>Listing weathers</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>City</th>
+    <th>Rss date</th>
+    <th>Weather</th>
+    <th>High/Low</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% for weather in @weathers %>
+  <tr class="<%= cycle('list-line-odd','list-line-even')%>">
+    <td><%=h weather.id %></td>
+    <td><%=h weather.city_id %></td>
+    <td><%= weather.rss_date.strftime("%Y/%m/%d %H:%M:%S") %></td>
+    <td><%=h weather.weather %></td>
+    <td><%=h weather.high_temperature %>℃/<%=h weather.low_temperature %>℃</td>
+    <td><%= weather.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+    <td><%= weather.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+    <td><%= link_to 'Show', weather %></td>
+    <td><%= link_to 'Edit', edit_weather_path(weather) %></td>
+    <td><%= link_to 'Destroy', weather, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New weather', new_weather_path %>

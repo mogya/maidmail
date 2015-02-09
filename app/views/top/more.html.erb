@@ -1,0 +1,57 @@
+<% content_for :html_header do -%>
+	<title>more - メイドめーる</title>
+<% end -%>
+
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<h2 id="morning_mail">
+<%= image_tag("title_morning.png",{:size=>"220x50",:class=>"title",:alt=>"朝のメール"}) %>
+</h2>
+<div class="content">
+	<%= image_tag("image_morning.png",{:size=>"333x310",:class=>"screen_image",:alt=>"朝のメール"}) %>
+	<p class="caption">
+	毎朝メイドさんから
+	メールが届きます。
+	</p>
+	<ul>
+	<li>今日の予定</li>
+	<li>天気予報</li>
+	<li>メイドさんから一言</li>
+	</ul>
+</div>
+
+<h2 id="schdule_mail">
+<%= image_tag("title_schdule.png",{:size=>"347x50",:class=>"title",:alt=>"スケジュール管理"}) %>
+</h2>
+<div class="content">
+	<%= image_tag("image_schdule1.png",{:size=>"388x137",:class=>"screen_image",:alt=>""}) %>
+	<p class="caption">
+	メールを送ると、内容がカレンダーに記入されます。<br />
+	</p>
+</div>
+
+<div class="content">
+<%= image_tag("image_schdule2.png",{:size=>"394x251",:class=>"screen_image",:alt=>""}) %>
+<p class="caption">
+決まったフォーマットでなくてもOK。打ち合わせのメールをそのまま転送しても大丈夫。
+</p>
+<%= image_tag("image_schdule3.png",{:size=>"412x72",:class=>"screen_image",:alt=>""}) %>
+<%= image_tag("image_schdule4.png",{:size=>"412x299",:class=>"screen_image",:alt=>""}) %>
+</div>
+
+<ul id="action_list">
+	<li class="first">
+		<%= link_to(
+			image_tag("button_try.gif",{:size=>"152x57",:alt=>"試してみる！"}),
+			{:controller=>'top',:action=>"try"} 
+		 ) %>
+	</li>
+	<li class="last">
+		<%= link_to(
+			image_tag("button_regist.gif",{:size=>"152x57",:alt=>"登録する！"}),
+			{:controller=>'login',:action=>"regist"} 
+		 ) %>
+	</li>
+</ul>
+

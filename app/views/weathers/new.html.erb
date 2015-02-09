@@ -1,0 +1,46 @@
+<h1>New weather</h1>
+
+<%= error_messages_for :weather %>
+
+<% form_for(@weather) do |f| %>
+  <p>
+    <b>City</b><br />
+    <%= f.text_field :city_id %>
+  </p>
+
+  <p>
+    <b>Rss date</b><br />
+    <%= f.datetime_select :rss_date %>
+  </p>
+
+  <p>
+    <b>Weather</b><br />
+    <%= f.text_area :weather %>
+  </p>
+
+  <p>
+    <b>High temperature</b><br />
+    <%= f.text_field :high_temperature %>
+  </p>
+
+  <p>
+    <b>Low temperature</b><br />
+    <%= f.text_field :low_temperature %>
+  </p>
+
+  <p>
+    <b>Created at</b><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+
+  <p>
+    <b>Updated at</b><br />
+    <%= f.datetime_select :updated_at %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', weathers_path %>

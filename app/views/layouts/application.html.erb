@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keyword" content="" />
+	<meta name="description" content="メイドめーるは、Googleカレンダーの予定を毎朝携帯電話にメールしてくれるサービスです。メールに返信することで、予定を登録することも出来ます。" />
+  <%= stylesheet_link_tag 'import' %>
+	<!--[if IE]>
+  <%= stylesheet_link_tag 'ie' %>
+	<%= javascript_include_tag 'iepngfix_tilebg' %>
+	<![endif]-->
+	<%= yield :html_header %>
+</head>
+<body>
+	<div id="container" class="<%=@charactor%>">
+		<div id="header">
+			<div id="title">
+					<%= link_to( image_tag("logo2.png",{:size=>"257x49",:alt=>"メイドめーる"}), root_path ) %>
+			</div>
+			<div id="login_area">
+			<% if (session[:user_id]) -%>
+				<% if (RAILS_ENV=="development") -%>
+					<p>user_id:<%=session[:user_id] -%></p>
+					<p>USER:<%= User.find(session[:user_id]).mail -%></p>
+				<% end -%>
+				<p><%= link_to("設定変更",:controller=>"login",:action=>"index") %></p>
+				<p><%= link_to("ログアウト",logout_path) %></p>
+			<% else -%>
+				<% if (!@login_form_renderd) -%>
+					<%= render :file=>"login/_login_form" %>
+				<% end -%>
+			<% end -%>
+			</div>
+		</div>
+		<div id="eyecatch">
+			<%= yield :eyecatch %>
+		</div>
+		<div id="main">
+			<%= yield :main -%>
+			<%= yield -%>
+		</div>
+		<div id="footer">
+			<ul id="footer_menu" class="horizontal_menu">
+				<li class="first"><%= link_to 'トップ', root_path %></li>
+				<li              ><%= link_to 'メイドめーるについて',{:controller=>'top',:action=>'about'} %></li>
+				<li              ><%= link_to '利用規約',{:controller=>'top',:action=>'rule'} %></li>
+				<li              ><%= link_to '開発者ブログ',"http://mogya.com",{:popup=>true} %></li>
+				<li class="last" ><%#= link_to 'お問い合わせ',{:controller=>'top',:action=>'contact'} %><a href="mailto:info@maidmail.jp">お問い合わせ</a></li>
+			</ul>
+			<div id="copyright" >
+			<span class="copyright">Copyright(c) D.Furukawa 2008 All Rights Reserved.</span>
+			<%= link_to(
+				image_tag("aorbnr_e.jpg",{:size=>"88x31",:alt=>"Drecom Award on rails 2008に参加しています。"}),
+				"http://rails.drecom.jp/",{:popup=>true}
+			 ) %>
+			 </div>
+
+		</div>
+	</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2495522-4");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

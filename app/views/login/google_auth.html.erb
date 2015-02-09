@@ -1,0 +1,29 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_regist.png",{:size=>"180x50",:class=>"title",:alt=>"設定"}) %>
+<%= image_tag("icon_progress_black.png",{:size=>"41x53",:class=>"title",:alt=>""}) %>
+<%= image_tag("icon_progress_black.png",{:size=>"41x53",:class=>"title",:alt=>""}) %>
+<%= image_tag("icon_progress_white.png",{:size=>"41x53",:class=>"title",:alt=>""}) %>
+
+<p class="main-text">メイドめーるがあなたの予定にアクセスできるように、Googleカレンダーに登録を行います。
+「進む」を押すとこんな画面が出てくるので
+</p>
+<%= image_tag("image_googleauth.png",{:size=>"566x319"}) %>
+<p class="main-text">内容を確認して、「アクセスを許可」を押してくださいね。
+</p>
+
+<% form_tag(@google_auth_url) do -%>
+<table id="regenerate_mailto_address_table" class="form_table">
+	<tr><td><%= submit_tag("進む",:disable_with=>"送信中..") %></td></tr>
+</table>
+
+<% end -%>
+

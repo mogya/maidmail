@@ -1,0 +1,17 @@
+<% content_for :eyecatch do -%>
+<% end -%>
+
+<%if flash[:notice] or flash[:error] -%>
+	<div class="message">
+		<%=simple_format h(flash[:notice]) %>
+		<%=simple_format h(flash[:error]) %>
+	</div>
+<% end -%>
+
+<%= image_tag("title_withdrawal.png",{:size=>"172x50",:class=>"title",:alt=>"登録削除"}) %>
+<p class="main-text">
+　メイドめーるのユーザー登録情報を削除しました。ご利用、ありがとうございました。
+</p>
+<p class="main-text">
+	<%= link_to( "メイドめーる トップページに戻る", root_path ) %>
+</p>

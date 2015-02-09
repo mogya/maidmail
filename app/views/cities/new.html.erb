@@ -1,0 +1,46 @@
+<h1>New city</h1>
+
+<%= error_messages_for :city %>
+
+<% form_for(@city) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Area1</b><br />
+    <%= f.text_field :area1 %>
+  </p>
+
+  <p>
+    <b>Area2</b><br />
+    <%= f.text_field :area2 %>
+  </p>
+
+  <p>
+    <b>Rss uri</b><br />
+    <%= f.text_field :rss_uri %>
+  </p>
+
+  <p>
+    <b>Rss type</b><br />
+    <%= f.text_field :rss_type %>
+  </p>
+
+  <p>
+    <b>Pos latitude</b><br />
+    <%= f.text_field :pos_latitude %>
+  </p>
+
+  <p>
+    <b>Pos longitude</b><br />
+    <%= f.text_field :pos_longitude %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', cities_path %>

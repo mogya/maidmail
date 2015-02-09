@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mail: MyString
+  password: MyString
+  mailto: MyString
+  morningMailTime: "10:10"
+  notifybefore: 10
+  calendarFeedUri: "http://www.google.com/calendar/feeds/default/private/full"
+  calendarToken: MyString
+  city_id: 1
+  ext1: MyString
+  ext2: MyString
+two:
+  mail: MyString
+  password: MyString
+  mailto: MyString
+  morningMailTime: "10:10"
+  notifybefore: 10
+  calendarFeedUri: "http://www.google.com/calendar/feeds/default/private/full"
+  calendarToken: MyString
+  city_id: 1
+  ext1: MyString
+  ext2: MyString

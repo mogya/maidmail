@@ -1,0 +1,41 @@
+<% content_for :html_header do -%>
+	<title>メールが届かない - メイドめーる</title>
+<% end -%>
+
+<% content_for :eyecatch do -%>
+
+<% end -%>
+
+<%= image_tag("title_mailhelp.png",{:size=>"337x50",:class=>"title",:alt=>"メールが届かない？"}) %>
+
+<h3 class="title">メールアドレスは、<B><%= @user.mail %></B>であっていますか？</h3>
+<p class="main_text">
+間違っていたら、<%= link_to("設定変更",{:controller=>"login",:action=>"config"}) %>で直してくださいね。
+</p>
+
+<h3 class="title">迷惑メールフィルタがかかっていないですか？</h3>
+<p class="main_text">
+maidmail.jpからのメールが受け取れるように設定してくださいね。
+</p>
+
+<h3 class="title">迷惑メール設定ページの開き方</h3>
+
+<table class="visible_table">
+<tr>
+	<td>ドコモ</td>
+	<td>iMenu　→　お客様サポート　→　各種設定　→　詳細な設定（メール設定）　→　迷惑メール対策</td>
+<tr>
+<tr>
+	<td>AU</td>
+	<td>メールキー　→　Eメール設定　→　その他設定　→　メールフィルター</td>
+<tr>
+<tr>
+	<td>ソフトバンク</td>
+	<td>メニューリスト　→　MySoftbank　→　各種変更手続き　→　メール各種設定（オリジナルメール設定）　→　迷惑メールブロック設定</td>
+<tr>
+
+<% form_tag(:controller=>"login",:action=>"send_welcome_mail") do -%>
+<table id="send_welcome_mail_table" class="form_table">
+	<tr><td><%= submit_tag("使い方メールをもう一度送る",:disable_with=>"送信中..") %></td></tr>
+</table>
+<% end -%>
